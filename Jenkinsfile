@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy using SSH Key') {
             steps {
                 // Use the sshagent step to load and use the SSH private key
-                sshagent(credentials: ['devqa-ssh-key']) {
+                sshagent(credentials: ['ansible-1']) {
                     // Run SSH commands securely here
                     sh '''
                     scp -r ssl ansible@172.31.15.113:/home/ansible/deployment/
